@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Following ZHENG</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<style>
+  html, body {
+  background-color: #3F3F3F;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {font-family: "Helvetica", }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica";
+  letter-spacing: 5px;
+
+}
+
+/* 重置全局 section 空隙 */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 修复 header 间距问题 */
+header {
+  margin-bottom: 0;
+}
+
+/* intro block 设置更紧凑 */
+.intro-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  height: 40vh; /* 比 aspect-ratio 更灵活 */
+}
+
+
+</style>
+</style>
+</head>
+<body>
+
+<!-- 导航栏 HTML -->
+<div class="navbar-fixed-top">
+  <div class="w3-bar w3-padding w3-card custom-navbar">
+    <!-- 左侧 logo 图片 -->
+    <a href="#home" class="w3-bar-item w3-button">
+      <img src="./picture/logo.png" alt="Logo" style="height:30px; vertical-align:middle;">
+    </a>
+    <!-- 右侧导航链接 -->
+    <div class="w3-right w3-hide-small">
+      <a href="#story" class="w3-bar-item w3-button nav-link">Story</a>
+      <a href="#How AI Creates Content" class="w3-bar-item w3-button nav-link">How AI Creates Content</a>
+      <a href="#About Misinformation" class="w3-bar-item w3-button nav-link">About Misinformation</a>
+    </div>
+  </div>
+</div>
+
+<!-- 样式部分 -->
+<style>
+/* 固定在页面顶部 */
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999; /* 保证永远在最上层 */
+}
+
+/* 自定义导航栏样式 */
+.custom-navbar {
+  background-color: #0A0B0E;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* 导航链接样式 */
+.nav-link {
+  color: white;
+}
+
+/* 可选：添加悬停效果 */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+</style>
+
+
+
+
+
+<!-- Header -->
+<header class="w3-display-container no-gap" style="width:100%;" id="home">
+  <img class="w3-image" src="./picture/head.png" alt="Hamburger Catering" width="1600" height="800">
+  
+  <!-- 标题文字图片，带缩放动画 -->
+  <img class="title-animation" src="./picture/title.png" alt="Title" style="position: absolute; top: 15%; left: 5%; width: 800px;">
+
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+  </div>
+</header>
+
+<style>
+/* 定义缩放动画 */
+@keyframes scalePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); } /* 轻微放大 5% */
+  100% { transform: scale(1); }
+}
+
+/* 让 title.png 动起来 */
+.title-animation {
+  animation: scalePulse 1s infinite steps(1, end); /* steps(1, end) 实现卡点式变化 */
+}
+
+</style>
+
+
+
+
+
+
+
+<!-- Intro Section -->
+<!-- Intro Section -->
+<section class="intro-container">
+  <!-- 左侧打字内容 -->
+  <div class="intro-text-container">
+    <div class="intro-text" id="line1"></div>
+    <div class="intro-text" id="line2"></div>
+    <div class="intro-text" id="line3"></div>
+    <div class="intro-text" id="line4"></div>
+    <div class="intro-text" id="line5"></div> <!-- 新增的第五行 -->
+  </div>
+  <!-- 右侧图片叠加 -->
+  <div class="image-stack">
+    <img src="./picture/intro1.png" alt="Background Image" class="bg-image">
+    <img src="./picture/intro2.png" alt="Wiggling Image" class="wiggle-image">
+  </div>
+</section>
+
+<!-- 样式 -->
+<style>
+  
+/* 整体布局为左右排列 */
+.intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+/* 左侧打字区 */
+.intro-text-container {
+  flex: 1;
+  max-width: 45%;
+  color: white;
+  position: relative; /* 使 z-index 生效 */
+  z-index: 2;         /* 确保不被右侧图压住 */
+}
+
+/* 单行打字样式 */
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+/* 打字光标闪烁 */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* 图片容器：两张图叠加 */
+.image-stack {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+/* 背景图 intro1：贴页面右侧 */
+.bg-image {
+  position: relative;
+  display: block;
+  max-width: 600px;
+  margin-right: 60px; /* 控制向左偏一点 */
+}
+
+/* 前景图 intro2：轻微旋转晃动 */
+.wiggle-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 250px;
+  transform-origin: 50% 90%;
+  animation: swing 0.6s infinite steps(2, end);
+  z-index: 1;
+}
+
+/* 卡点式左右摇摆 */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-text-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .bg-image,
+  .wiggle-image {
+    max-width: 90%;
+  }
+}
+
+</style>
+
+<!-- 脚本：打字机效果 -->
+<script>
+const lines = [
+  "The 2025 National Games are currently being held across Guangdong, Hong Kong, and Macau.",
+  "Cheung Ka Long has just won the men's foil championship!",
+  "Reporter ZHENG, who was at the scene,",
+  "immediately utilized various AI technologies to report this exciting news！",
+  "So, how did she use AI to help her dominate the trending topics...? 👇🏻"
+];
+
+function typeWriter(elementId, text, speed, callback, isLastLine = false) {
+  let i = 0;
+  const element = document.getElementById(elementId);
+  element.innerHTML = "";
+  element.classList.remove("blink");
+
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      if (!isLastLine) {
+        element.style.borderRight = "none";
+      } else {
+        element.classList.add("blink");
+      }
+      if (callback) callback();
+    }
+  }
+
+  type();
+}
+
+function startTyping() {
+  typeWriter("line1", lines[0], 10, () => {
+    typeWriter("line2", lines[1], 10, () => {
+      typeWriter("line3", lines[2], 10, () => {
+        typeWriter("line4", lines[3], 10, () => {
+          typeWriter("line5", lines[4], 10, null, true); // 第五行保留光标
+        });
+      });
+    });
+  });
+}
+
+startTyping();
+
+</script>
+
+
+
+
+
+<!-- SPEED WRITING Block -->
+<section class="speed-writing-section">
+  <div class="speed-writing-container">
+    <!-- 左边 gif -->
+    <div class="gif-area">
+      <img src="./picture/text_1.png" alt="GIF" class="speed-gif">
+    </div>
+
+    <!-- 右边文字内容 -->
+    <div class="text-area">
+      <h2>SPEED WRITING</h2>
+      <p>
+        At the competition venue, ZHENG recorded details like the score, <br>
+        athletes’ movements and conditions, and the audience’s reactions. <br>
+        She fed all this information into an AI tool, asking it to quickly generate fact-based text for different social media platforms.<br>
+        In no time, the AI produced multiple versions of the copy.
+      </p>
+      <!-- 小图片按钮 -->
+      <img src="./picture/moretext.png" alt="More" class="more-button">
+    </div>
+  </div>
+</section>
+
+<style>
+/* 整体区域背景与间距 */
+.speed-writing-section {
+  padding: 40px 5%;
+  background-color: transparent;
+}
+
+/* 容器：左右结构，不换行 */
+.speed-writing-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+/* 左边图片区域，添加左侧空隙 */
+.gif-area {
+  flex: 1;
+  padding-left: 40px;  /* ✅ 给图片左边留空 */
+}
+
+/* 图片大小设为原始宽度的 50% */
+.speed-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 右边文字区域 */
+.text-area {
+  color: white;
+  flex: 1;
+  max-width: 600px;
+}
+
+/* 标题样式 */
+.text-area h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* 正文字体 */
+.text-area p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* 小按钮样式 */
+.more-button {
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.more-button:hover {
+  transform: scale(1.05);
+}
+</style>
+
+
+
+
+<!-- IMAGE GENERATION Block -->
+<section class="image-generation-section">
+  <!-- 上部分横向图片 -->
+  <div class="image-banner">
+    <img src="./picture/illustration_1.png" alt="Banner Image" class="banner-img">
+  </div>
+
+  <!-- 下部分文字内容 -->
+  <div class="image-content">
+    <!-- 左边标题 -->
+    <div class="image-titles">
+      <h2>GENERATE NEWS ILLUSTRATIONS</h2>
+    </p>
+    <img src="./picture/moreimage.png" alt="More" class="more-button">
+    </div>
+
+    <!-- 右边正文和按钮 -->
+    <div class="image-text-area">
+      <p>
+        ZHENG realized that many readers might not be familiar with the sport of fencing—especially the differences in scoring between épée, sabre, and foil. As a professional journalist, she wanted to use AI to generate some visual aids to help explain the sport more intuitively. So, she input some details and asked the AI to create informative images about fencing.
+
+      
+    </div>
+  </div>
+</section>
+
+<style>
+/* 整个区域背景颜色 */
+.image-generation-section {
+  background-color: #3F3F3F;
+  padding: 0;
+  margin: 0;
+}
+
+/* 横向图撑满整个页面宽度 */
+.image-banner {
+  width: 100%;
+}
+.banner-img {
+  width: 100vw; /* 视口宽度 */
+  height: auto;
+  display: block;
+}
+
+/* 文字内容部分，内边距设置得更合理 */
+.image-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;      /* ✅ 整体居中 */
+  align-items: flex-start;      /* 顶部对齐 */
+  padding: 40px 5%;             /* ✅ 用固定值控制上下间距 */
+  gap: 1px;                    /* ✅ 控制左右文字间的空隙 */
+  flex-wrap: wrap;              /* 小屏幕时允许换行 */
+}
+
+/* 左边标题区域 */
+.image-titles {
+  color: white;
+  flex: 1;
+  min-width: 10px;
+}
+.image-titles h2 {
+  font-size: 2rem;
+  margin: 10 0 2px 0;
+  letter-spacing: 2px;
+}
+
+/* 右边正文区域 */
+.image-text-area {
+  color: white;
+  flex: 2;
+  min-width: 280px;
+  max-width: 600px;
+}
+.image-text-area p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* 按钮样式 */
+.more-button {
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.more-button:hover {
+  transform: scale(1.05);
+}
+</style>
+
+
+
+
+
+<!-- NEW VIDEO CUT Block -->
+<section class="new-video-cut-section">
+  <div class="new-video-cut-container">
+    <!-- 左边 gif -->
+    <div class="new-gif-area">
+      <img src="./picture/video_1.png" alt="New GIF" class="new-speed-gif">
+    </div>
+
+    <!-- 右边文字内容 -->
+    <div class="new-text-area">
+      <h2>RAPID VIDEO EDITING</h2>
+      <p>
+        ZHENG also received footage from the TV broadcast of the match. She wanted the AI to help her edit highlight clips, such as key scoring moments. Since the footage included commentary, the AI could identify important segments based on the narrator’s cues and automatically add subtitles. Very soon, the AI generated several short videos. ZHENG was confident she could be among the first to go viral.
+      </p>
+      <!-- 小图片按钮 -->
+      <img src="./picture/moreNLP.png" alt="More" class="new-more-button">
+    </div>
+  </div>
+</section>
+
+<style>
+
+/* 新整体区域背景与间距 */
+.new-video-cut-section {
+  padding: 50px 0%;  /* 调整上下间距 */
+  background-color: transparent;
+  margin: 0;  /* 移除外边距，确保整个区块紧贴屏幕 */
+}
+
+/* 新容器：左右结构，不换行 */
+.new-video-cut-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* 调整内容的对齐方式，使其靠左 */
+  gap: 30px;
+  flex-wrap: nowrap;
+  width: 100%;  /* 确保容器宽度100% */
+}
+
+/* 新左边图片区域，去掉任何间距 */
+.new-gif-area {
+  flex: 1;
+  padding-left: 0;  /* 确保没有左侧留白 */
+  margin-left: 0;   /* 确保没有外边距 */
+}
+
+/* 保持图片原始大小，靠左对齐 */
+.new-speed-gif {
+  width: 120%;        /* 保持原始宽度 */
+  height: auto;       /* 保持原始高度 */
+  margin-left: 0;     /* 确保图片贴左 */
+  display: block;     /* 确保是块级元素 */
+}
+
+/* 新右边文字区域，调整位置 */
+.new-text-area {
+  color: white;
+  flex: 1;
+  max-width: 600px;
+  padding-top: 80px; /* 让文字上移一些 */
+  padding-right: 60px; /* 添加右侧空隙，让文字不贴着右边 */
+  position: relative; /* 设置相对定位 */
+  left: -72px;  /* 向左移动文字区域，值可以根据需要调整 */
+}
+
+/* 新标题样式 */
+.new-text-area h2 {
+  font-size: 2rem;
+  margin-bottom: 10px; /* 减小标题和正文的间隔 */
+  letter-spacing: 2px;
+}
+
+/* 新正文字体 */
+.new-text-area p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* 新小按钮样式 */
+.new-more-button {
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 0%;  /* 让按钮稍微上移 */
+  margin-left: 0px; /* 将按钮稍微向左移 */
+}
+
+.new-more-button:hover {
+  transform: scale(1.05);
+}
+</style>
+
+
+
+
+<!-- report过度 -->
+<div class="ai-reflection-block">
+  <p>
+    After a busy period, ZHENG completed her multimedia news coverage across multiple platforms and media in a very short time, tailored for different audiences. She believes that Cheung Ka Long's victory today will definitely bring her more traffic. She is truly grateful for all the AI tools that helped her with her news reporting!
+  </p>
+</div>
+
+<style>
+  .ai-reflection-block {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+
+
+
+  <!-- report -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>组件A + 背景图展示</title>
+    <style>
+      /* 整体无边距 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      /* 外层容器，宽度100% */
+      .report-block {
+        width: 100%;
+        overflow: hidden;
+      }
+  
+      /* 包裹背景图和组件 */
+      .report-background-wrapper {
+        position: relative;
+        width: 100%;
+      }
+  
+      /* 背景图片铺满宽度，高度等比 */
+      .report-background-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+  
+      /* 组件A固定在图片的右下角 */
+      .report-component {
+        position: absolute;
+        bottom: 200px;
+        right: 330px;
+        width: 220px;
+        height: auto;
+        display: inline-block;
+      }
+  
+      /* 主图像 */
+      #mainImage {
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 1;
+      }
+  
+      /* 四个 hover 区域 */
+      .hover-zone {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        z-index: 2;
+        cursor: pointer;
+      }
+  
+      /* 四宫格定位 */
+      .top-left {
+        top: 0;
+        left: 0;
+      }
+  
+      .top-right {
+        top: 0;
+        right: 0;
+      }
+  
+      .bottom-left {
+        bottom: 0;
+        left: 0;
+      }
+  
+      .bottom-right {
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <section class="report-block">
+      <!-- 背景图B -->
+      <div class="report-background-wrapper">
+        <img src="./picture/reportbackground.png" alt="Background" class="report-background-img" />
+  
+        <!-- 组件A：hover 切换图 -->
+        <div class="report-component" id="reportComponent">
+          <img src="./picture/reportimage.png" alt="Report" id="mainImage" />
+          <!-- 四个透明 hover 区域 -->
+          <div class="hover-zone top-left" data-image="./picture/reportimage1.png"></div>
+          <div class="hover-zone top-right" data-image="./picture/reportimage2.png"></div>
+          <div class="hover-zone bottom-left" data-image="./picture/reportimage3.png"></div>
+          <div class="hover-zone bottom-right" data-image="./picture/reportimage4.png"></div>
+        </div>
+      </div>
+    </section>
+  
+    <script>
+      const mainImage = document.getElementById("mainImage");
+      const hoverZones = document.querySelectorAll(".hover-zone");
+      const defaultSrc = "./picture/reportimage.png";
+  
+      hoverZones.forEach(zone => {
+        const newSrc = zone.dataset.image;
+  
+        zone.addEventListener("mouseenter", () => {
+          mainImage.src = newSrc;
+        });
+  
+        zone.addEventListener("mouseleave", () => {
+          mainImage.src = defaultSrc;
+        });
+      });
+    </script>
+  
+  </body>
+  </html>
+  
+
+
+
+<!-- 弹幕过度 -->
+<div class="ai-reflection-block">
+  <p id="but-text">
+    BUT
+  </p>
+</div>
+
+<!-- 样式部分 -->
+<style>
+  .ai-reflection-block {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  /* 动画效果 */
+  #but-text {
+    display: inline-block;
+    animation: scaleAnimation 3s infinite steps(1, end); /* 使每个倍数变化没有过渡 */
+  }
+
+  /* 定义放大动画 */
+  @keyframes scaleAnimation {
+    0% {
+      transform: scale(1); /* 初始大小 1倍 */
+    }
+    33% {
+      transform: scale(3); /* 放大到 3倍 */
+    }
+    66% {
+      transform: scale(5); /* 放大到 5倍 */
+    }
+    100% {
+      transform: scale(1); /* 最终恢复到 1倍 */
+    }
+  }
+</style>
+
+
+
+
+<!-- 弹幕 -->
+<section class="danmu-section">
+  <div class="danmu-container">
+    <!-- 弹幕图片 -->
+    <div class="danmu-item">
+      <img src="./picture/danmu1.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu2.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu3.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu2.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu1.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu3.png" alt="Danmu">
+    </div>
+    <!-- 增加更多弹幕 -->
+    <div class="danmu-item">
+      <img src="./picture/danmu1.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu2.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu3.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu1.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu2.png" alt="Danmu">
+    </div>
+    <div class="danmu-item">
+      <img src="./picture/danmu3.png" alt="Danmu">
+    </div>
+  
+    <!-- 👇 这是顶部图片，缺它图片就不会显示 -->
+  <div class="danmu-top">
+    <img src="./picture/danmuup.png" alt="Top Overlay">
+  </div>
+
+  </div>
+</section>
+
+<style>
+.danmu-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+}
+
+.danmu-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.danmu-item {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  animation: danmu-animation 10s linear infinite;
+}
+
+.danmu-item img {
+  width: 26vw;
+  height: auto;
+}
+
+@keyframes danmu-animation {
+  0% {
+    transform: translateX(400%);
+    top: calc(100% * var(--random-top));
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-400%);
+    top: calc(100% * var(--random-top));
+    opacity: 1;
+  }
+}
+
+/* 随机化弹幕参数（已打乱前几项顺序） */
+.danmu-item:nth-child(1) {
+  --random-top: 0.35;
+  animation-duration: 28s;
+  animation-delay: 1s;
+}
+
+.danmu-item:nth-child(2) {
+  --random-top: 0.12;
+  animation-duration: 31s;
+  animation-delay: 3s;
+}
+
+.danmu-item:nth-child(3) {
+  --random-top: 0.57;
+  animation-duration: 27s;
+  animation-delay: 2s;
+}
+
+.danmu-item:nth-child(4) {
+  --random-top: 0.26;
+  animation-duration: 30s;
+  animation-delay: 0s;
+}
+
+.danmu-item:nth-child(5) {
+  --random-top: 0.66;
+  animation-duration: 32s;
+  animation-delay: 4s;
+}
+
+.danmu-item:nth-child(6) {
+  --random-top: 0.48;
+  animation-duration: 29s;
+  animation-delay: 6s;
+}
+
+.danmu-item:nth-child(7) {
+  --random-top: 0.73;
+  animation-duration: 30s;
+  animation-delay: 8s;
+}
+
+.danmu-item:nth-child(8) {
+  --random-top: 0.18;
+  animation-duration: 33s;
+  animation-delay: 10s;
+}
+
+.danmu-item:nth-child(9) {
+  --random-top: 0.22;
+  animation-duration: 36s;
+  animation-delay: 12s;
+}
+
+.danmu-item:nth-child(10) {
+  --random-top: 0.05;
+  animation-duration: 28s;
+  animation-delay: 14s;
+}
+
+.danmu-item:nth-child(11) {
+  --random-top: 0.91;
+  animation-duration: 35s;
+  animation-delay: 16s;
+}
+
+.danmu-item:nth-child(12) {
+  --random-top: 0.39;
+  animation-duration: 27s;
+  animation-delay: 18s;
+}
+
+
+
+
+
+/* 弹幕容器 */
+.danmu-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: url('./picture/danmubackground.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* 顶部居中图片 */
+.danmu-top {
+  position: absolute;
+  top: 25%;
+  left: 55%;
+  transform: translateX(-50%);
+  z-index: 10; /* 保证在弹幕上方 */
+}
+
+.danmu-top img {
+  max-width: 60%;
+  height: auto;
+}
+
+
+
+</style>
+
+
+<!-- mis过度 -->
+<div class="ai-reflection-block">
+  <p>
+    So it turns out! <br>
+    In her rush to grab traffic, ZHENG published various AI-generated content without realizing that AI had also produced a lot of misinformation. After the content went live, Cheung Ka Long’s fans and some professionals began to criticize the errors and misleading information. Some platforms even took down ZHENG’s content or restricted its reach. <br>
+    <br>
+    Let’s take a look at the kinds of misinformation that were created:
+  </p>
+</div>
+
+<style>
+  .ai-reflection-block {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+
+
+<!-- MIS Block -->
+<div class="mis-block">
+  <div class="mis-upper">
+    <div class="mis-image hover-img" data-hover="./picture/mis12.png" data-default="./picture/mis11.png">
+      <img src="./picture/mis11.png" alt="mis11">
+    </div>
+    <div class="mis-image hover-img" data-hover="./picture/mis22.png" data-default="./picture/mis21.png">
+      <img src="./picture/mis21.png" alt="mis21">
+    </div>
+  </div>
+  <div class="mis-lower">
+    <div class="mis-lower-left hover-img" data-hover="./picture/mis32.png" data-default="./picture/mis31.png">
+      <img src="./picture/mis31.png" alt="mis31">
+    </div>
+  </div>
+  <!-- 底部按钮 -->
+  <div class="mis-bottom-button">
+    <img src="./picture/moremisinformation.png" alt="More Info">
+  </div>
+</div>
+
+<style>
+/* MIS block 总容器，带背景图，contain 防止 hover 抖动影响外部 */
+.mis-block {
+  background: url('./picture/misbackground.png') no-repeat center top;
+  background-size: 100% auto;
+  width: 100%;
+  padding: 40px 0;
+  box-sizing: border-box;
+  contain: layout paint;
+}
+
+/* 上半部分：左右两张图 */
+.mis-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 图片 hover 效果容器 */
+.hover-img {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* 防止图片被其他元素覆盖 */
+  height: 300px; /* 设置高度，避免影响布局 */
+}
+
+/* 图片样式 */
+.hover-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持图片完整，避免裁剪 */
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* hover 放大视觉效果 */
+.hover-img:hover img {
+  transform: scale(1);
+}
+
+/* 下半部分：第三张图 */
+.mis-lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.mis-lower-left {
+  max-width: 500px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1; /* 确保图片不被其他元素覆盖 */
+  height: 300px; /* 设置高度，避免影响布局 */
+}
+
+.mis-lower-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持图片完整，避免裁剪 */
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.mis-lower-left:hover img {
+  transform: scale(1);
+}
+
+/* 最下方按钮，居中 */
+.mis-bottom-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mis-bottom-button img {
+  max-width: 180px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mis-bottom-button img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+</style>
+
+<script>
+// 通用 hover 替图逻辑
+document.querySelectorAll('.hover-img').forEach(el => {
+  const img = el.querySelector('img');
+  const hoverSrc = el.getAttribute('data-hover');
+  const defaultSrc = el.getAttribute('data-default');
+  el.addEventListener('mouseenter', () => img.src = hoverSrc);
+  el.addEventListener('mouseleave', () => img.src = defaultSrc);
+});
+</script>
+
+
+
+
+
+  <!-- AI Journalism Reflection Block -->
+<div class="ai-reflection-block">
+  <p>
+    After all those little hiccups, ZHENG figured it’s about time to really learn how to be a journalist who uses AI wisely—can’t just let AI do all the work! A good journalist still has a job to do. So, to end on a high note, let’s check out a truly professional interview video about HKBU alumnus Cheung Ka Long and his awesome story.
+  </p>
+</div>
+
+<style>
+  .ai-reflection-block {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+
+
+
+ <!-- 响应式视频容器 -->
+<!-- 视频外部容器 -->
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/5GkO4-IucX8?si=Ev7arXM1xOpRs7Xs" 
+    title="YouTube video player"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+<style>
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.video-container iframe {
+  width: 960px;   /* 等比例缩小的宽度 */
+  height: 540px;  /* 16:9 的高度 */
+  border: none;
+  border-radius: 8px;  /* 可选：圆角 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 可选：阴影 */
+}
+</style>
+
+
+
+
+
+
+<!-- about过度 -->
+<div class="ai-reflection-block">
+  <p>
+  The story has come to an end.  <br>
+  ZHENG has further learned how to work with AI as a media professional. AI won’t replace journalists anytime soon — instead, it should be seen as a helpful tool and partner that supports our work. 
+  Fighting misinformation and upholding professional ethics remain just as important in the age of AI.👏🏻
+</div>
+
+<style>
+  .ai-reflection-block {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+
+
+
+
+
+
+ <!-- ABOUT -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Block</title>
+    <style>
+        body {
+            margin: 0;  /* 去除浏览器默认的页边距 */
+            padding: 0;
+        }
+
+        .about-block {
+            display: flex;
+            background-color: #f0f0f0;  /* 浅灰色背景 */
+            padding: 40px 20px 20px;  /* 增加顶部内边距 */
+            align-items: center;  /* 垂直居中 */
+            margin: 0; /* 保证灰色背景左右顶到页面边缘 */
+            width: 100%; /* 保证宽度是100% */
+        }
+
+        .about-image {
+            max-width: 45%;  /* 图片宽度限制为45% */
+            height: auto;
+            margin-right: 50px;  /* 图片与文本之间的间距 */
+            margin-left: 20px; /* 图片整体向右移动 */
+        }
+
+        .about-text {
+            max-width: 50%;  /* 文字区域的最大宽度增加 */
+        }
+
+        .about-text h2 {
+            font-size: 22px;  /* 标题的字体大小 */
+            margin-bottom: 15px;
+            letter-spacing: 1px;  /* 减小字母间距 */
+            margin-top: 20px;  /* 增加标题上方的距离 */
+        }
+
+        .about-text p {
+            font-size: 14px;  /* 正文字号调小 */
+            line-height: 1.6;  /* 正文行距增大 */
+            margin-right: 10px;  /* 让正文离右边框更近 */
+            margin-top: 20px;  /* 增加正文上方的距离 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-block">
+        <img src="./picture/team.png" alt="Team Image" class="about-image">
+        <div class="about-text">
+            <h2>ABOUT</h2>
+            <p>This website is a group project for the AIDM7350 course at the School of Communication, HKBU. Our group chose to create a website to introduce topics related to AI in Content Creation and Misinformation. <br>
+              The creative planning and coding of the homepage (the Story Page) were handled by Zheng Yi, the group leader. Zheng Xiangyuan was responsible for the content and programming of the "How AI Creates Content" page. Zhang Ruoyu took charge of the content and programming for the "About Misinformation" page. Yu Zekai provided support in UI design. <br>
+              This website aims to educate the public about AI in content creation and media through a story. Thank you for visiting.🤝</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+<!-- Footer Block -->
+<div class="footer">
+  MSc in AI & Digital Media 2024-2025
+</div>
+
+<style>
+  .footer {
+      background-color: black;  /* 黑色背景 */
+      color: #808080;  /* 灰色文字 */
+      text-align: center;  /* 居中文本 */
+      padding: 8px 0;  /* 上下内边距 */
+      font-size: 14px;  /* 文字大小 */
+      width: 100%;  /* 使宽度为100% */
+      margin-top: 0px;  /* 与上方内容的距离 */
+  }
+</style>
+
+
+  
+  
+  
+  
+  
